@@ -1,8 +1,8 @@
 export default function Hero(){
     return(
-        <div class="hero h-full">
-            <div class="front-hero h-full flex flex-col items-center justify-center">
-                <div class="flex flex-row space-x-3 w-4/12">
+        <div className="hero h-full">
+            <div className="front-hero h-full flex flex-col items-center justify-center">
+                <div className="flex flex-row space-x-3 w-4/12">
                     {/* <a href="/projects" class="w-1/2">
                         <div class="front shadow-md border border-slate-500 flex flex-col items-center text-center w-full pt-4 pb-5 px-1.5">
                             <i class='bx bxs-package'></i>
