@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Product_view from './product_view'
+import Topbar from './Topbar'
 
 export default function Dashboard(){
     const [products, setProducts] = useState([])
@@ -34,7 +35,8 @@ export default function Dashboard(){
 
     return(
         <div className='w-full px-10'>
-            <h1>Hello World</h1>
+            {/* <h1>Hello World</h1> */}
+            <Topbar />
             {products.length > 0  && products.map((product, index) => {
                 return <Product_view product={product} />
             })}
