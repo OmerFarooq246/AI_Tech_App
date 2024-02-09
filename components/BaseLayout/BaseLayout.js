@@ -1,6 +1,8 @@
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Head from 'next/head'
+import { Figtree } from "next/font/google"
+const figtree = Figtree({subsets: ['latin'], variable: "--font-figtree"})
 
 export default function BaseLayout({title, children}) {
   return (
@@ -11,7 +13,7 @@ export default function BaseLayout({title, children}) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Header></Header>
-        <main className={`grow`}>
+        <main className={`grow ${figtree.variable}`}>
             {children}
         </main>
         <Footer></Footer>
