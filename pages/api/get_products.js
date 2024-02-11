@@ -4,7 +4,16 @@ const prisma = new PrismaClient()
 export default async function handler(req, res) {
   try{
     const products = await prisma.products.findMany({
-      take: 10
+      // take: 10,
+      select: {
+        id: true,
+        title: true,
+        brand: true,
+        main_cat: true,
+        price: true,
+        imageURLHighRes: true,
+        description: true
+      }
     })
     res.status(200).json(products)
   }
