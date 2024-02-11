@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
-import bycryptjs from "bcryptjs"
+import bcryptjs from "bcryptjs"
 
 export default async function handler(req, res) {
     console.log("req.body in signup: ", req.body)
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     }
     
     const password = req.body.signupData.password
-    const hashedPassword = await bycryptjs.hash(password, 10) //salt = 10
+    const hashedPassword = await bcryptjs.hash(password, 10) //salt = 10
     try{
         const user = await prisma.users.create({
         data: {
